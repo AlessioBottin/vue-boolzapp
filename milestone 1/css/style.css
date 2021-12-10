@@ -16,6 +16,12 @@ ul {
 /* COMMON  */
 .icon {
     color: rgb(192, 192, 192);
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.grey-background {
+    background-color: #eaeaea;
 }
 
 .app-wrapper {
@@ -51,80 +57,148 @@ ul {
     display: flex;
     flex-direction: row;
     overflow: hidden;
-
-    /* test  */
-    background-color: pink;
 }
 
 /* Left column  */
 .col-l {
     width: 35%;
     height: 100%;
-
-    /* tst  */
-    background-color: purple;
 }
 
 
 /* User bar  */
 .user-bar {
     height: 80px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    /* test  */
-    background-color: darkgray;
+.user-info {
+    font-size: 19px;  
+    display: flex;
+    flex-direction: row; 
+}
+
+.user-info span {
+    align-self: center;
+}
+
+.user-info img {
+    border-radius: 50%;
+    height: 60px;
+    margin-right: 10px;
 }
 
 /* Notifications bar  */
 .notifications-bar {
     height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #8edafb;
+    padding: 15px 20px;
+}
 
-    /* test  */
-    background-color: darksalmon;
+.notification-txt {
+    margin-left: 10px;
+}
+.notifications-bar span {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+    line-height: 70px;
+    text-align: center;
+    font-size: 22px;
+    color: #8edafb;
+}
+
+.notifications-bar p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.notifications-bar a {
+    color: black;
+    font-size: 14px;
 }
 
 /* Search bar  */
 .search-bar {
     height: 50px;
+    background-color: rgb(233, 233, 233);
+    padding: 5px 10px;
+    position: relative;
+}
 
-    /* test  */
-    background-color: crimson;
+.search-bar input {
+    background-color: white;
+    border: none;
+    width: 100%;
+    height: 40px;
+    margin: auto;
+    padding: 0 10px 0 30px;
+    color: rgb(126, 126, 126);
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar .icon {
+    position: absolute;
+    font-size: 14px;
+    top: 18px;
+    left: 10px;
 }
 
 /* Chats  */
-.chats {
+.chat-list {
     height: calc(100% - 230px);
-
-    /* test  */
-    background-color: coral;
+    background-color: white;
 }
 
-.chats ul {
+.chat-list ul {
     height: 100%;
     overflow-y: auto;
 }
 
-.chats ul li {
+.chat-list ul li {
     height: 100px;
     display: flex;
     flex-direction: row;
     padding: 10px 20px;
     font-size: 20px;
-
-    /* test  */
-    background-color: cornflowerblue;
+    border-bottom: 1px solid lightgray;
 }
 
-.chats ul li img {
+.chat-list ul li img {
     height: 80px;
     border-radius: 50%;
     margin-right: 15px;
 }
+
 /* RIGHT COLUMN  */
 .col-r {
     width: 65%;
     height: 100%;
-
-    /* test  */
-    background-color: cyan;
+    border-left: 1px solid darkgray;
 }
  
+.contact-bar {
+    height: 80px;
+    padding: 10px;
+}
+
+.chat {
+    height: calc(100% - 160px);
+    background-image: url(../img/mine.jpg);
+    overflow-y: auto;
+}
+
+.input-bar {
+    height: 80px;
+}
