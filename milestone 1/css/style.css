@@ -14,3 +14,117 @@ ul {
 }
 
 /* COMMON  */
+.icon {
+    color: rgb(192, 192, 192);
+}
+
+.app-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    min-width: 956px;
+}
+
+/* Background */
+.green-rectangle {
+    background-color: #009587;
+    height: 150px;
+    width: 100%;
+}
+
+.gradient-rectangle {
+    background-color: #d9dad5;
+    height: calc(100vh - 150px);
+    width: 100%;
+}
+
+/* App container  */
+.app-container {
+    height: calc(100vh - 80px);
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    /* test  */
+    background-color: pink;
+}
+
+/* Left column  */
+.col-l {
+    width: 35%;
+    height: 100%;
+
+    /* tst  */
+    background-color: purple;
+}
+
+
+/* User bar  */
+.user-bar {
+    height: 80px;
+
+    /* test  */
+    background-color: darkgray;
+}
+
+/* Notifications bar  */
+.notifications-bar {
+    height: 100px;
+
+    /* test  */
+    background-color: darksalmon;
+}
+
+/* Search bar  */
+.search-bar {
+    height: 50px;
+
+    /* test  */
+    background-color: crimson;
+}
+
+/* Chats  */
+.chats {
+    height: calc(100% - 230px);
+
+    /* test  */
+    background-color: coral;
+}
+
+.chats ul {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.chats ul li {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    font-size: 20px;
+
+    /* test  */
+    background-color: cornflowerblue;
+}
+
+.chats ul li img {
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+/* RIGHT COLUMN  */
+.col-r {
+    width: 65%;
+    height: 100%;
+
+    /* test  */
+    background-color: cyan;
+}
+ 
