@@ -67,9 +67,9 @@
                         <ul>
 
                             <!-- Single chat  -->
-                            <li class="single-chat">
-                                <img src="img/avatar_1.jpg" alt="user1">
-                                Michele
+                            <li v-for="contact in contacts" class="single-chat">
+                                <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                                {{ contact.name }}
                             </li>
 
                         </ul>
