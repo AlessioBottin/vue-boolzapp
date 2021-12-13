@@ -100,7 +100,17 @@ const app = new Vue(
             isActive: function(index) {
                 if (this.activeContactIndex === index) {
                     return true;
-                }
+                };
+            },
+            isSent: function(index) {
+                if (this.contacts[this.activeContactIndex].messages[index].status === 'sent') {
+                    return true;
+                };
+            },
+            isReceived: function(index) {
+                if (this.contacts[this.activeContactIndex].messages[index].status === 'received') {
+                    return true;
+                };
             },
             sendMessage: function() {
                 this.contacts[this.activeContactIndex].messages.push(
@@ -119,8 +129,8 @@ const app = new Vue(
                             status: 'received',
                         },
                     );
-                }, 1000 )
-            }
+                }, 1000 );
+            },
         },
     }
 );

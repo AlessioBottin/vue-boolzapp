@@ -108,9 +108,9 @@
                         <div class="chat-container">
 
                             <div 
-                                v-for="message in contacts[activeContactIndex].messages" 
+                                v-for="(message, index) in contacts[activeContactIndex].messages" 
                                 class="message"
-                                :class="{ sent: message.status === 'sent', received: message.status === 'received' }"
+                                :class="{ sent: isSent(index), received: isReceived(index) }"
                             >
                                 <div>{{ message.text }}</div>
                                 <span class="time">{{ message.date }}</span>
