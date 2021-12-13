@@ -4,6 +4,7 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            activeContactIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -92,7 +93,14 @@ const app = new Vue(
             
         },
         methods: {
-
+            changeActiveContact: function(index) {
+                this.activeContactIndex = index;
+            },
+            isActive: function(index) {
+                if (this.activeContactIndex === index) {
+                    return true;
+                }
+            }
         },
     }
 );
