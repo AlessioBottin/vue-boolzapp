@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    
+    
+
+    <div id="root">
+        
+        <div class="app-wrapper">
+
+            <!-- App Container  -->
+            <div class="app-container">
+
+                <!-- Left column  -->
+                <div class="col-l">
+
+                    <!-- User bar  -->
+                    <div class="user-bar grey-background">
+
+                        <!-- User info  -->
+                        <div class="user-info">
+                            <div class="user-info-img">
+                                <img src="img/avatar_io.jpg" alt="io">
+                            </div>
+                            <span>Nome utente</span>
+                        </div>
+
+                        <!-- Buttons  -->
+                        <div class="bar-buttons">
+                            <span class="icon"><i class="fas fa-circle-notch"></i></span>
+                            <span class="icon"><i class="fas fa-comment-alt"></i></span>
+                            <span class="icon"><i class="fas fa-ellipsis-v"></i></span>
+                        </div>
+
+                    </div>
+
+                    <!-- Notifications bar  -->
+                    <div class="notifications-bar">
+                        <span><i class="fas fa-bell-slash"></i></span>
+                        <div class="notification-txt">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+
+                    <!-- Search Bar  -->
+                    <div class="search-bar">
+                        <span class="icon"><i class="fas fa-search"></i></span>
+                        <input type="text" placeholder="Crea o inizia una nuova chat">   
+                    </div>
+
+                    <!-- Chat List  -->
+                    <div class="chat-list">
+                        <ul>
+
+                            <!-- Single chat  -->
+                            <li v-for="contact in contacts" class="single-chat">
+                                <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                                {{ contact.name }}
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Right column  -->
+                <div class="col-r">
+
+                    <!-- Contact Bar  -->
+                    <div class="contact-bar grey-background">
+
+                        <!-- Contact info  -->
+                        <div class="contact-info">
+                            <img src="img/avatar_1.jpg" alt="avatar_1">
+                            <span class="contact-txt">
+                                <p class="name">Michele</p>
+                                <p class="access">Ultimo accesso oggi alle</p>
+                            </span>
+                        </div>
+
+                        <!-- Buttons  -->
+                        <div class="bar-buttons">
+                            <span class="icon"><i class="fas fa-search"></i></span>
+                            <span class="icon"><i class="fas fa-paperclip"></i></span>
+                            <span class="icon"><i class="fas fa-ellipsis-v"></i></span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Chat  -->
+                    <div class="chat">
+                        <div class="chat-container">
+
+                            <div class="message sent">
+                                <div>Ciao come stai?</div>
+                                <span class="time">10/10/2022 10:10:23</span>
+                            </div>
+
+                            <div class="message received">
+                                <div>Bene</div>
+                                <span class="time">10/10/2022 10:11:23</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Input bar  -->
+                    <div class="input-bar grey-background">
+                        <span><i class="far fa-smile"></i></span>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <span><i class="fas fa-microphone"></i></span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>       
+
+    </div>  
+
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
