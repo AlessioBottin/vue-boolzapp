@@ -85,6 +85,7 @@ body {
 .user-info-img img {
     border-radius: 50%;
     height: 60px;
+    min-width: 60px;
 }
 .bar-buttons {
     min-width: 94px;
