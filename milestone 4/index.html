@@ -55,7 +55,12 @@
                     <!-- Search Bar  -->
                     <div class="search-bar">
                         <span class="icon"><i class="fas fa-search"></i></span>
-                        <input type="text" placeholder="Crea o inizia una nuova chat">   
+                        <input 
+                            type="text" 
+                            placeholder="Crea o inizia una nuova chat"
+                            v-model="searchBarText"
+                            @keyup="searchContact"
+                        >   
                     </div>
 
                     <!-- Chat List  -->
@@ -64,7 +69,8 @@
 
                             <!-- Single chat  -->
                             <li 
-                                v-for="(contact, index) in contacts" 
+                                v-for="(contact, index) in contacts"
+                                v-show="contact.visible" 
                                 class="single-chat"
                                 :class="{ active: isActive(index) }"
                                 @click="changeActiveContact(index)"

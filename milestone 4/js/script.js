@@ -6,6 +6,7 @@ const app = new Vue(
         data: {
             activeContactIndex: 0,
             userNewMessage: '',
+            searchBarText: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -130,6 +131,15 @@ const app = new Vue(
                         },
                     );
                 }, 1000 );
+            },
+            searchContact: function() {
+                this.contacts.forEach(element => {
+                    if (!element.name.toLowerCase().includes(this.searchBarText.toLowerCase())) {
+                        element.visible = false;
+                    } else {
+                        element.visible = true;
+                    };   
+                });
             },
         },
     }
