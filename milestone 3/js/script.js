@@ -5,6 +5,7 @@ const app = new Vue(
         el: '#root',
         data: {
             activeContactIndex: 0,
+            userNewMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -100,6 +101,25 @@ const app = new Vue(
                 if (this.activeContactIndex === index) {
                     return true;
                 }
+            },
+            sendMessage: function() {
+                this.contacts[this.activeContactIndex].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: this.userNewMessage,
+                        status: 'sent',
+                    },
+                );
+                this.userNewMessage = '';
+                setTimeout( () => {
+                    this.contacts[this.activeContactIndex].messages.push(
+                        {
+                            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                            text: 'ok',
+                            status: 'received',
+                        },
+                    );
+                }, 1000 )
             }
         },
     }

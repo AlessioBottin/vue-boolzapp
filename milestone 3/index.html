@@ -120,9 +120,15 @@
                     </div>
 
                     <!-- Input bar  -->
-                    <div class="input-bar grey-background">
+                    <div 
+                        class="input-bar grey-background">
                         <span><i class="far fa-smile"></i></span>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input 
+                            type="text" 
+                            v-model="userNewMessage" 
+                            placeholder="Scrivi un messaggio"
+                            @keyup.enter="sendMessage"
+                        >
                         <span><i class="fas fa-microphone"></i></span>
                     </div>
 
