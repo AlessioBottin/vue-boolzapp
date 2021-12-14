@@ -31,6 +31,11 @@ body {
     background-color: #eaeaea;
 }
 
+.invisible {
+    display: none;
+}
+
+/* App  */
 .app-wrapper {
     width: 100%;
     height: 100vh;
@@ -268,6 +273,29 @@ body {
     top: 5px;
     color: gray;
     font-size: 15px;
+}
+
+.message .drop-down-menu {
+    display: none;
+    background-color:white;
+    position: absolute;
+    z-index: 1;
+    right: -45px;
+    top: 25px;
+}
+
+.message .drop-down-menu.active {
+    display: block;
+}
+
+.message .drop-down-menu div {
+    line-height: 40px;
+    font-size: 13px;
+    padding: 0 10px 0 10px;
+}
+
+.message .drop-down-menu div:hover {
+   background-color: rgb(238, 238, 238);
 }
 
 .sent {
