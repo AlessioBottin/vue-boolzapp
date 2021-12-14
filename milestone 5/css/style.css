@@ -193,6 +193,20 @@ body {
     margin-right: 15px;
 }
 
+.chat-list .last-message {
+    font-size: 15px;
+    color: rgb(94, 94, 94);
+    margin-top: 20px;
+}
+
+.chat-list .last-message-date {
+    font-size: 12px;
+    color: rgb(49, 49, 49);
+    flex-grow: 1;
+    text-align: end;
+    margin-top: 45px;
+}
+
 /* RIGHT COLUMN  */
 .col-r {
     width: 65%;

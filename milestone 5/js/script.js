@@ -125,15 +125,21 @@ const app = new Vue(
                 };
             },
             sendMessage: function() {
-                this.contacts[this.activeContactIndex].messages.push(
-                    {
-                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                        text: this.userNewMessage,
-                        status: 'sent',
-                        dropDown: '',
-                    },
-                );
-                this.userNewMessage = '';
+                // Se l utente scrive almeno un carattere diverso dallo spazio 
+                if (this.userNewMessage.trim() !== '') {
+                    // Pusho il messaggio 
+                    this.contacts[this.activeContactIndex].messages.push(
+                        {
+                            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                            text: this.userNewMessage,
+                            status: 'sent',
+                            dropDown: '',
+                        },
+                    );
+                    // Resetto il messaggio 
+                    this.userNewMessage = '';
+                }
+                // Dopo 1 sec il contatto risponde ok 
                 setTimeout( () => {
                     this.contacts[this.activeContactIndex].messages.push(
                         {
@@ -165,7 +171,24 @@ const app = new Vue(
             },
             deleteMessage: function(index) {
                 this.contacts[this.activeContactIndex].messages.splice(index, 1);
-            }
+            },
+            getLastMessage: function(index) {
+                // se la stringa è più lunga di tot caratteri
+                // devo prendere la stringa dentro lastmessage 
+                // ed estrapolarne solo un certo numero di caratteri 
+                // e aggiungere i ... 
+                let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].text;
+                
+                if (lastMessage.length > 12) {
+                    lastMessage = lastMessage.slice(0, 13) + '...'
+                }
+                return lastMessage;
+            },
+            getLastMessageDate: function(index) {
+                let lastMessageDate = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+                return lastMessageDate;
+            },
+            
         },
     }
 );
