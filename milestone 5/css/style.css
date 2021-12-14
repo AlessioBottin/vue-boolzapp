@@ -275,6 +275,10 @@ body {
     font-size: 15px;
 }
 
+.message .drop-down:hover {
+    color: black;
+}
+
 .message .drop-down-menu {
     display: none;
     background-color:white;

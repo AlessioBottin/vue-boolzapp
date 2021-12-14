@@ -122,13 +122,18 @@
                                 <div>{{ message.text }}</div>
 
                                 <!-- Drop Down menu  -->
-                                <div class="drop-down" @click="toggleDropDown(message)">
+                                <div class="drop-down" @click="toggleDropDown(index)">
                                     <i class="fas fa-angle-down"></i>
                                 </div>
 
                                 <div class="drop-down-menu" :class="message.dropDown">
                                     <div>Message info</div>
-                                    <div :class="{ invisible: message.status === 'received' }">Delete message</div>
+                                    <div 
+                                        :class="{ invisible: message.status === 'received' }"
+                                        @click="deleteMessage(index)"
+                                    >
+                                        Delete message
+                                    </div>
                                 </div>
 
                                 <span class="time">{{ message.date }}</span>

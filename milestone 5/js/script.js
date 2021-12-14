@@ -130,6 +130,7 @@ const app = new Vue(
                         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                         text: this.userNewMessage,
                         status: 'sent',
+                        dropDown: '',
                     },
                 );
                 this.userNewMessage = '';
@@ -139,6 +140,7 @@ const app = new Vue(
                             date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                             text: 'ok',
                             status: 'received',
+                            dropDown: '',
                         },
                     );
                 }, 1000 );
@@ -152,13 +154,18 @@ const app = new Vue(
                     };   
                 });
             },
-            toggleDropDown: function(message) {
+            toggleDropDown: function(index) {
+                let message = this.contacts[this.activeContactIndex].messages[index];
+
                 if (message.dropDown === '') {
                     message.dropDown = 'active';
                 } else {
                     message.dropDown = '';
                 }
             },
+            deleteMessage: function(index) {
+                this.contacts[this.activeContactIndex].messages.splice(index, 1);
+            }
         },
     }
 );
